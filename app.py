@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
+import os
 
 # importar el archivo de datos
-vehicles = pd.read_csv('vehicles_us.csv')
+file_path = os.path.join(os.path.dirname(__file__), 'vehicles_us.csv')
+vehicles = pd.read_csv(file_path)
 
 # Poner el título y crear la casilla
 hist_button = st.checkbox('Construir histograma')
